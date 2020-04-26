@@ -3,7 +3,7 @@
         <div class="alert-danger alert border p-3 mt-3">
           {{session('mensaje')}}
         </div>
-      </div>
+    </div>
 @endif
 
 @if(session('mensaje_success'))
@@ -12,7 +12,7 @@
         <div class="alert-success alert border p-3 mt-3">
           {{session('mensaje_success')}}
         </div>
-      </div>
+    </div>
 @endif
 
 @if ($errors->any())

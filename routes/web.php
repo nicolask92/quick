@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 // Generales 
 
         Route::get('/','InicioController@index')->name('index');
-        Route::post('/buscado','InicioController@indexbusqueda')->name('indexbusqueda');
+        Route::get('/buscado','InicioController@indexbusqueda')->name('indexbusqueda');
 
 // Agregar Reservas
 
@@ -35,6 +35,7 @@ use Illuminate\Support\Facades\Route;
     //Moviles
         Route::get('/administracion/moviles','AdministracionController@agregar_moviles')->name('administracion.moviles');
         Route::post('/administracion/moviles','AdministracionController@agregado_moviles')->name('administracion.moviles_a');
+            Route::post('/administracion/agregar_marca','AdministracionController@agregar_marca')->name('administracion.addmarca');
 
     //Gastos
         Route::get('/administracion/gastos','AdministracionController@agregar_gastos')->name('administracion.gastos');

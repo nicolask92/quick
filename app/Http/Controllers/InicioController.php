@@ -25,11 +25,6 @@ class InicioController extends Controller
     }
     public function indexbusqueda(Request $request) {
         
-        $request->validate([
-            'fecha_c' => 'required',
-            'fecha_f' => 'required'
-        ]);
-
         $fecha_c = $request->fecha_c;
         $fecha_f = $request->fecha_f;
 

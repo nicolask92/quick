@@ -101,46 +101,16 @@ class ReservarController extends Controller
             $nueva_reserva->vuelo = $request->vuelo;
         }
 
-        if($request->tarifa==''){
-            $nueva_reserva->tarifa = "S/D";
-        }
-        else {
-            $nueva_reserva->tarifa = $request->tarifa;
-        }
-        
-        if($request->movil==''){
-            $nueva_reserva->movil = "S/D";
-        }
-        else {
-            $nueva_reserva->movil = $request->movil;
-        }
-
-        if($request->solicito==''){
-            $nueva_reserva->solicito = "S/D";
-        }
-        else {
-            $nueva_reserva->solicito = $request->solicito;
-        }
-
-        if($request->tipo_v=='' ? $nueva_reserva->tipo_v = "S/D" : $nueva_reserva->tipo_v = $request->tipo_v;);
-
+        if($request->tarifa=='' ? $nueva_reserva->tarifa = "S/D" : $nueva_reserva->tarifa = $request->tarifa);
+        if($request->movil=='' ? $nueva_reserva->movil = "S/D" : $nueva_reserva->movil = $request->movil);
+        if($request->solicito=='' ? $nueva_reserva->solicito = "S/D" : $nueva_reserva->solicito = $request->solicito);
+        if($request->tipo_v=='' ? $nueva_reserva->tipo_v = "S/D" : $nueva_reserva->tipo_v = $request->tipo_v);
         if($request->vehiculo == '' ?  $nueva_reserva->vehiculo ="S/D" : $nueva_reserva->vehiculo = $request->vehiculo );
-
         if($request->comentarios == '' ?  $nueva_reserva->comentarios ="S/D" : $nueva_reserva->comentarios = $request->comentarios );
-        
         if($request->tipo_c == '' ?  $nueva_reserva->tipo_c ="S/D" : $nueva_reserva->tipo_c = $request->tipo_c );
-        
-        if($request->voucher == '' ?  $nueva_reserva->voucher ="S/D" : $nueva_reserva->voucher = $request->voucher );
-        
+        if($request->voucher == '' ?  $nueva_reserva->voucher ="S/D" : $nueva_reserva->voucher = $request->voucher ); 
         if($request->usuario == '' ?  $nueva_reserva->usuario ="S/D" : $nueva_reserva->usuario = "Super Admin" );
-
-
-        
-
-
         $nueva_reserva->save();
-
-
 
         return back()->with('mensaje_success', 'Traslado agregado');
 

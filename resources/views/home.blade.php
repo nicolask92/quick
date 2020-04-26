@@ -63,6 +63,8 @@
 
 <script>
 
+  // Pone el dia de hoy en el buscador de fechas o la ultima fecha ingresada
+
 var dateControl = document.querySelector('input[type="date"]');
 var dateControl2 = document.querySelector('#app > div:nth-child(2) > input');
 var today = new Date();
@@ -71,8 +73,24 @@ var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
 var yyyy = today.getFullYear();
 
 today = yyyy + '-' + mm + '-' + dd;
-dateControl.value = today;
-dateControl2.value = today;
+
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+
+const fecha_comienzo = urlParams.get('fecha_c')
+const fecha_final = urlParams.get('fecha_f')
+
+
+if(fecha_comienzo == null && fecha_final == null) {
+  dateControl.value = today;
+  dateControl2.value = today;
+}
+else {
+  dateControl.value = fecha_comienzo;
+  dateControl2.value = fecha_final;
+}
+
+
 
 </script>
 

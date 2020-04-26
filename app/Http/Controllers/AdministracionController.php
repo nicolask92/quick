@@ -82,6 +82,20 @@ class AdministracionController extends Controller
         return back()->with('mensaje_success', 'Movil Agregado');
             }
 
+    public function agregar_marca(Request $request) {
+    
+     //   $JsonMarcaYModelo = $request->all();
+
+        $MarcaYModelo = new App\Autos();
+
+        $MarcaYModelo->marca = $request->Marca;
+        $MarcaYModelo->modelo = $request->Modelo;
+
+        $MarcaYModelo->save();
+
+        return response()->json($MarcaYModelo);
+        
+    }
 
     // Gastos
     public function agregar_gastos() {

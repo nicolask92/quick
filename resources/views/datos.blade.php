@@ -10,8 +10,7 @@
 
   <div id="bootstrap-iso form" class="container pt-4 pb-2">
 
-    <form autocomplete="off" method="POST" action="{{ route('indexbusqueda') }}">
-      @csrf
+    <form autocomplete="off" method="GET" action="{{ route('indexbusqueda', ['fecha_c' => 'fecha_C', 'fecha_f' => 'fecha_f']) }}">
         <div class="row" id="app">
 
               <div class="col-sm-3">
