@@ -58,7 +58,6 @@
       <a role="button" href="#" id="BotonNuevaMarca" class="btn btn-primary">Agregar</a>
       </div>
     </div>
-
     <button type="submit" class=" btn btn-primary">Agregar Movil</button>
   </form>
 </div>
@@ -118,10 +117,6 @@
           Marca = $('#NuevaMarca > div:nth-child(1) > input').val();
           Modelo = $('#NuevaMarca > div:nth-child(2) > input').val();
 
-          MarcaYModelo.push(Marca);
-          MarcaYModelo.push(Modelo);
-          
-          JsonMarcaYModelo = JSON.stringify(MarcaYModelo);
 
           console.log(MarcaYModelo);
           
